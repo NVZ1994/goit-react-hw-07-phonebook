@@ -9,7 +9,6 @@ export const fetchContacts = createAsyncThunk(
       const contacts = await contactsAPI.fetchContacts();
       return contacts;
     } catch (error) {
-      console.log('fetch: ', error);
       Notify.failure(`${error.message}`);
     }
   }
@@ -23,7 +22,6 @@ export const addContact = createAsyncThunk(
       Notify.success(`${contactData.name} has been added to your contacts`);
       return contact;
     } catch (error) {
-      console.log('add: ', error);
       Notify.failure(`${error.message}`);
     }
   }
@@ -37,7 +35,6 @@ export const deleteContact = createAsyncThunk(
       Notify.success(`${data.name} has been deleted from your contacts`);
       return data.id;
     } catch (error) {
-      console.log('delete: ', error);
       Notify.failure(`${error.message}`);
     }
   }

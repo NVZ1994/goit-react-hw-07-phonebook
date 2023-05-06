@@ -49,14 +49,18 @@
 .Contact__item {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px 0 5px 0;
+    padding: 5px 10px;
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .Contact__item--text {
     font-size: 15px;
     min-width: 100px;
+}
+
+.Contact__item--number {
+    color: red;
 }

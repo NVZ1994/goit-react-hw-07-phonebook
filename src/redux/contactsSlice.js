@@ -39,12 +39,12 @@ export const contacts = createSlice({
     [addContact.rejected]: rejected,
 
     [deleteContact.pending]: pending,
-    [deleteContact.pending]: (state, action) => {
+    [deleteContact.fulfilled]: (state, action) => {
       state.items = state.items.filter(
         contact => contact.id !== action.payload
       );
       fulfilled(state);
     },
-    [deleteContact.pending]: rejected,
+    [deleteContact.rejected]: rejected,
   },
 });

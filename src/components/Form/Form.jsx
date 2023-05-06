@@ -63,7 +63,7 @@ export function Form() {
         <input
           className="Form__input"
           type="tel"
-          name="phone"
+          name="number"
           value={number}
           onChange={handleInputChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

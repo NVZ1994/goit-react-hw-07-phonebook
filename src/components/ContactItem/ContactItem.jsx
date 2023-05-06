@@ -12,7 +12,7 @@ export function ContactItem({ name, number, id }) {
   return (
     <li className="Contact__item">
       <p className="Contact__item--text">{name}: </p>
-      <p className="Contact__item--text">{number}</p>
+      <p className="Contact__item--text Contact__item--number">{number}</p>
       <button className="Delete__btn" type="button" onClick={onClick}>
         Delete
       </button>
