@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { filterSelector } from 'redux/selectors';
 import { getFilter } from 'redux/filterSlice';
 
 export function Filter() {
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(filterSelector);
   const dispatch = useDispatch();
 
   const onChange = event => {

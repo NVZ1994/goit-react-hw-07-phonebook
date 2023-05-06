@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Notify } from 'notiflix';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
+import { contactsSelector } from 'redux/selectors';
 
 export function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(contactsSelector);
 
   const handleInputChange = event => {
     const { name, value } = event.currentTarget;
@@ -36,7 +36,6 @@ export function Form() {
 
     dispatch(addContact({ name, number }));
     reset();
-    Notify.success(`${name} has been added to your contacts`);
   };
 
   const reset = () => {
@@ -64,7 +63,7 @@ export function Form() {
         <input
           className="Form__input"
           type="tel"
-          name="number"
+          name="phone"
           value={number}
           onChange={handleInputChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
